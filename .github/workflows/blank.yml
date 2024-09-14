@@ -33,9 +33,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       
-     - name: Run Veracode Pipeline Script
-  run: |
-    yml_file="${{ github.workspace }}/veracode-workflow/Github Actions/PipelineIdeal.yml"
-    echo "Running Veracode Pipeline from $yml_file"
-    cat "$yml_file"
+      - name: Run Veracode Pipeline Script
+        run: |
+          yml_file="${{ github.workspace }}/veracode-workflow/Github Actions/PipelineIdeal.yml"
+          echo "Running Veracode Pipeline from $yml_file"
+          cat "$yml_file"
 
