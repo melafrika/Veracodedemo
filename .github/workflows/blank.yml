@@ -18,10 +18,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          repository: 'IGDEXE/Veracode'
+          ref: 'main'
+          path: 'veracode-workflow'
+      
       - name: Run a one-line script
         run: echo Hello, world!
 
@@ -29,3 +32,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      - name: Run Veracode Pipeline Script
+        run: |
+          yml_file=${{ github.workspace }}/veracode-workflow/Github\ Actions/PipelineIdeal.yml
+          echo "Running Veracode Pipeline from $yml_file"
+          cat $yml_file
+          # Here you can actually execute commands from the YML if needed
+
